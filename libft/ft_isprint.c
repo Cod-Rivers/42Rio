@@ -10,23 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include "libft.h"
+
 int	ft_isprint(int c)
-{	
+{
 	if (c >= 32 && c <= 176)
 	{
 		return (1);
-	}	
+	}
 	else
 	{
 		return (0);
-	}	
+	}
 }
-/*int main (void)
+int main (void)
 {
 	int c;
-	
+
 	c = '0';
-	
+
 	if (ft_isalpha(c))
 	{
 		printf("é alfabetico");
@@ -35,4 +38,4 @@ int	ft_isprint(int c)
 	{
 		printf("não é");
 	}
-}*/
+}
