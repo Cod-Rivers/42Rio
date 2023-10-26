@@ -1,0 +1,411 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+c2r5s4.42.rio
+Linux 5.15.0-86-generic x86_64
+$> date
+Mon Oct 23 07:59:10 PM -03 2023
+$> gcc --version
+gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+$> clang --version
+Ubuntu clang version 12.0.1-19ubuntu3
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.h: Error!
+Error: CONSECUTIVE_NEWLINES (line:  20, col:   1):	Consecutive newlines
+Error: MISALIGNED_FUNC_DECL (line:  24, col:   5):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  25, col:   5):	Misaligned function declaration
+Error: SPC_AFTER_POINTER    (line:  29, col:   9):	space after pointer
+Error: SPACE_REPLACE_TAB    (line:  29, col:  10):	Found space when expecting tab
+Error: EXP_PARENTHESIS      (line:  29, col:  21):	Expected parenthesis
+Error: SPC_AFTER_POINTER    (line:  29, col:  34):	space after pointer
+Error: NO_SPC_BFR_OPR       (line:  29, col:  43):	extra space before operator
+Error: MISALIGNED_FUNC_DECL (line:  32, col:   5):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  33, col:   5):	Misaligned function declaration
+Norme check failed
+
+= Compiling libft ==============================================================
+$> make re
+make: Warning: File 'Makefile' has modification time 60 s in the future
+rm -rf ft_strlen.o ft_bzero.o ft_isalnum.o ft_isalpha ft_isascii.o ft_isdigit.o ft_isprint.o ft_memchr.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar ft_strchr.o ft_strlen.o ft_strncmp.o ft_strrchr.o ft_tolower.o ft_touper.o
+rm -rf libft.a
+make: Circular ft_strlen.c <- ft_strlen.o dependency dropped.
+cc    -c -o ft_strlen.o ft_strlen.c
+make: Circular ft_bzero.c <- ft_bzero.o dependency dropped.
+cc    -c -o ft_bzero.o ft_bzero.c
+ft_bzero.c:16:30: error: unknown type name ‘size_t’
+   16 | void    *ft_bzero(void *str, size_t n)
+      |                              ^~~~~~
+ft_bzero.c:1:1: note: ‘size_t’ is defined in header ‘<stddef.h>’; did you forget to ‘#include <stddef.h>’?
+  +++ |+#include <stddef.h>
+    1 | /* ************************************************************************** */
+make: *** [<builtin>: ft_bzero.o] Error 1
+
+$> make bonus
+make: Warning: File 'Makefile' has modification time 60 s in the future
+make: *** No rule to make target 'bonus'.  Stop.
+
+$> ls -la libft.a
+
+= Part1_functions ==============================================================
+
+= ft_memset.c ==================================================================
+$> norminette ft_memset.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memset.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_bzero.c ===================================================================
+$> norminette ft_bzero.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_bzero.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_calloc.c ==================================================================
+$> norminette ft_calloc.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_calloc.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_calloc.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_memcpy.c ==================================================================
+$> norminette ft_memcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_memmove.c =================================================================
+$> norminette ft_memmove.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memmove.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_memchr.c ==================================================================
+$> norminette ft_memchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_memchr.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_memcmp.c ==================================================================
+$> norminette ft_memcmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_memcmp.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strlen.c ==================================================================
+$> norminette ft_strlen.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlen.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strdup.c ==================================================================
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strdup.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strdup.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strlcat.c =================================================================
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcat.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strlcat.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strlcpy.c =================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strlcpy.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strlcpy.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strchr.c ==================================================================
+$> norminette ft_strchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strrchr.c =================================================================
+$> norminette ft_strrchr.c | grep -E '(Error|Warning)'
+/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/ft_strrchr.c: Error!
+Error: CONSECUTIVE_NEWLINES (line:  13, col:   1):	Consecutive newlines
+Error: CONSECUTIVE_NEWLINES (line:  14, col:   1):	Consecutive newlines
+Error: SPC_AFTER_POINTER    (line:  20, col:   6):	space after pointer
+Error: SPACE_BEFORE_FUNC    (line:  20, col:   7):	space before function name
+Error: EXP_PARENTHESIS      (line:  20, col:  18):	Expected parenthesis
+Error: SPC_AFTER_POINTER    (line:  20, col:  31):	space after pointer
+Error: NO_SPC_BFR_OPR       (line:  20, col:  40):	extra space before operator
+Error: SPC_BEFORE_NL        (line:  20, col:  49):	Space before newline
+Error: SPC_BEFORE_NL        (line:  20, col:  50):	Space before newline
+Error: SPACE_EMPTY_LINE     (line:  26, col:   1):	Space on empty line
+Error: SPC_BFR_OPERATOR     (line:  31, col:  13):	missing space before operator
+Error: NEWLINE_PRECEDES_FUNC (line:  41, col:   1):	Functions must be separated by a newline
+Error: SPACE_BEFORE_FUNC    (line:  41, col:   4):	space before function name
+Error: NO_ARGS_VOID         (line:  41, col:  10):	Empty function argument requires void
+Error: BRACE_NEWLINE        (line:  41, col:  12):	Expected newline before brace
+Error: TOO_FEW_TAB          (line:  42, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  42, col:   3):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  42, col:   7):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  42, col:  17):	Declaration and assignation on a single line
+Error: TOO_FEW_TAB          (line:  43, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  43, col:   3):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  43, col:   7):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  43, col:  10):	Declaration and assignation on a single line
+Error: SPACE_REPLACE_TAB    (line:  44, col:   9):	Found space when expecting tab
+Error: MISALIGNED_VAR_DECL  (line:  44, col:  10):	Misaligned variable declaration
+Error: NL_AFTER_VAR_DECL    (line:  45, col:   1):	Variable declarations must be followed by a newline
+Error: VAR_DECL_START_FUNC  (line:  46, col:   1):	Variable declaration not at start of function
+Error: MISALIGNED_VAR_DECL  (line:  46, col:   9):	Misaligned variable declaration
+Error: DECL_ASSIGN_LINE     (line:  46, col:  13):	Declaration and assignation on a single line
+Error: SPACE_EMPTY_LINE     (line:  47, col:   3):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  47, col:   3):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  48, col:   1):	Missing tabs for indent level
+Error: VAR_DECL_START_FUNC  (line:  48, col:   1):	Variable declaration not at start of function
+Error: SPACE_REPLACE_TAB    (line:  48, col:   3):	Found space when expecting tab
+Error: SPACE_REPLACE_TAB    (line:  48, col:   7):	Found space when expecting tab
+Error: DECL_ASSIGN_LINE     (line:  48, col:  11):	Declaration and assignation on a single line
+Error: SPC_AFTER_OPERATOR   (line:  48, col:  11):	missing space after operator
+Error: SPACE_EMPTY_LINE     (line:  50, col:   3):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  50, col:   3):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  51, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  51, col:   3):	Found space when expecting tab
+Error: NO_SPC_AFR_PAR       (line:  51, col:  16):	Extra space after parenthesis (brace/bracket)
+Error: TOO_FEW_TAB          (line:  51, col:  18):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  52, col:   5):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  52, col:   5):	Comment is invalid in this scope
+Error: TOO_MANY_TAB         (line:  53, col:   1):	Extra tabs for indent level
+Error: TOO_FEW_TAB          (line:  54, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  54, col:   3):	Found space when expecting tab
+Error: BRACE_SHOULD_EOL     (line:  54, col:   4):	Expected newline after brace
+Error: TOO_FEW_TAB          (line:  54, col:   5):	Missing tabs for indent level
+Error: TOO_MANY_INSTR       (line:  54, col:   5):	Too many instructions on a single line
+Error: TOO_FEW_TAB          (line:  54, col:  10):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  55, col:   5):	Space on empty line
+Error: WRONG_SCOPE_COMMENT  (line:  55, col:   5):	Comment is invalid in this scope
+Error: TOO_FEW_TAB          (line:  56, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  56, col:   5):	Found space when expecting tab
+Error: TOO_FEW_TAB          (line:  57, col:   1):	Missing tabs for indent level
+Error: SPACE_EMPTY_LINE     (line:  57, col:   3):	Space on empty line
+Error: SPC_AFTER_OPERATOR   (line:  58, col:  16):	missing space after operator
+Error: TOO_FEW_TAB          (line:  59, col:   1):	Missing tabs for indent level
+Error: SPACE_REPLACE_TAB    (line:  59, col:   3):	Found space when expecting tab
+Error: RETURN_PARENTHESIS   (line:  59, col:  10):	Return value must be in parenthesis
+Norme check failed
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strrchr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strnstr.c =================================================================
+$> norminette ft_strnstr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strnstr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strnstr.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strncmp.c =================================================================
+$> norminette ft_strncmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strncmp.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_atoi.c ====================================================================
+$> norminette ft_atoi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_atoi.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_atoi.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_isalpha.c =================================================================
+$> norminette ft_isalpha.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isalpha.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_isdigit.c =================================================================
+$> norminette ft_isdigit.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isdigit.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_isalnum.c =================================================================
+$> norminette ft_isalnum.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isalnum.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_isascii.c =================================================================
+$> norminette ft_isascii.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isascii.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_isprint.c =================================================================
+$> norminette ft_isprint.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_isprint.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_toupper.c =================================================================
+$> norminette ft_toupper.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_toupper.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_tolower.c =================================================================
+$> norminette ft_tolower.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_tolower.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= Part2_functions ==============================================================
+
+= ft_strmapi.c =================================================================
+$> norminette ft_strmapi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strmapi.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strmapi.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_substr.c ==================================================================
+$> norminette ft_substr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_substr.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_substr.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strjoin.c =================================================================
+$> norminette ft_strjoin.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strjoin.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strjoin.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_strtrim.c =================================================================
+$> norminette ft_strtrim.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strtrim.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_strtrim.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_split.c ===================================================================
+$> norminette ft_split.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_split.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_split.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_itoa.c ====================================================================
+$> norminette ft_itoa.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_itoa.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_itoa.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_striteri.c ================================================================
+$> norminette ft_striteri.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_striteri.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_striteri.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_putchar_fd.c ==============================================================
+$> norminette ft_putchar_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putchar_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_putchar_fd.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_putstr_fd.c ===============================================================
+$> norminette ft_putstr_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putstr_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_putstr_fd.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_putendl_fd.c ==============================================================
+$> norminette ft_putendl_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putendl_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_putendl_fd.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_putnbr_fd.c ===============================================================
+$> norminette ft_putnbr_fd.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_putnbr_fd.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_putnbr_fd.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= Bonus_functions ==============================================================
+
+= ft_lstnew_bonus.c ============================================================
+$> norminette ft_lstnew_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstnew.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstnew.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstdelone_bonus.c =========================================================
+$> norminette ft_lstdelone_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstdelone.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstdelone.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstclear_bonus.c ==========================================================
+$> norminette ft_lstclear_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstclear.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstclear.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstadd_front_bonus.c ======================================================
+$> norminette ft_lstadd_front_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_front.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstadd_front.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstadd_back_bonus.c =======================================================
+$> norminette ft_lstadd_back_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstadd_back.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstadd_back.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstsize_bonus.c ===========================================================
+$> norminette ft_lstsize_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstsize.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstsize.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstiter_bonus.c ===========================================================
+$> norminette ft_lstiter_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstiter.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstiter.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstmap_bonus.c ============================================================
+$> norminette ft_lstmap_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstmap.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstmap.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'
+
+= ft_lstlast_bonus.c ===========================================================
+$> norminette ft_lstlast_bonus.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_lstlast.c main.c libft.a -o user_exe
+
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft//ft_lstlast.c'
+clang: error: no such file or directory: '/nfs/homes/rivda-si/42curso/meugithub/42rio/libft/.warmachine/dirlibft/libft.a'

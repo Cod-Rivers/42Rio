@@ -6,12 +6,14 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 18:57:46 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/08/11 19:37:43 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:53:27 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+//#include<stdio.h>
+//#include<string.h>
+#include "libft.h"
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	while (n > 0 && *s1 == *s2)
@@ -26,7 +28,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
-int	main(void)
+/*int	main(void)
 {
 	int	i;
 	char	s1[9] = "aaaba";
@@ -47,4 +49,4 @@ int	main(void)
 	}
 	
 	printf("i = %d", i);
-}
+}*/

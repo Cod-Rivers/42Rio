@@ -6,13 +6,15 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:24:43 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/17 16:43:20 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:03:49 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

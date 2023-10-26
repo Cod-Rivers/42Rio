@@ -6,29 +6,27 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 18:36:48 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/19 19:02:21 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:57:11 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
 #include "libft.h"
 
-char * ft_strrchr (const char * string , int c ) 
+char	*ft_strrchr(const char *string, int c)
 {
 	int		i;
 	int		len;
 	int		j;
 	char	*temp;
-	
+
 	temp = (char *)string;
 	len = ft_strlen(temp);
 	i = 0;
 	j = len;
-	while (j-1 > i)
+	while (j - 1 > i)
 	{
 		if (temp[j] == c)
 		{
@@ -38,7 +36,7 @@ char * ft_strrchr (const char * string , int c )
 	}
 	return (NULL);
 }
-int main() {
+/*int main() {
   char string[] = "Esta é uma string.";
   char c = 'a';
 	char *ptr;
@@ -57,4 +55,4 @@ int main() {
   }
 	printf("%d",len);
   return 0;
-}
+}*/

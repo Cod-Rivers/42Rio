@@ -6,11 +6,11 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:29:36 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/17 16:29:56 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:58:19 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 #include "libft.h"
 
 int	ft_isprint(int c)
@@ -24,7 +24,7 @@ int	ft_isprint(int c)
 		return (0);
 	}
 }
-int main (void)
+/*int main (void)
 {
 	int c;
 
@@ -38,4 +38,4 @@ int main (void)
 	{
 		printf("não é");
 	}
-}
+}*/
