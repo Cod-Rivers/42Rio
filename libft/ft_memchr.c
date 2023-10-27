@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 20:30:21 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/27 12:48:00 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/10/27 12:53:41 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/10/27 13:57:23 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<stdio.h>
-//#include<string.h>
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	size_t	c;
+	char	*temp;
 
 	i = 0;
-	c = dstsize;
-	while (src[i] != '\0')
+	temp = (void *)s;
+	while (temp[i] != '\0' || i < n)
 	{
-		dst [c] = src [i];
+		if (temp[i] == c)
+			return ((void *)&temp[i]);
 		i++;
-		c++;
 	}
-	dst [c] = '\0';
-	c = ft_strlen(dst);
-	return (c);
+	return (NULL);
 }
-/*int	main(void)
-{
-	int	i;
-	char	s1[9] = "eu me ";
-	const char	s2[9] = "amo!";
-	size_t len = ft_strlcat (s1,s2,ft_strlen(s1));
-	
-	printf("%zu",len);
 
-}*/	
+/*int main() {
+  char str[] = "Hello, world!";
+  char *found;
+
+  found = ft_memchr(str, 'o', ft_strlen(str));
+  if (found) {
+    printf("O caractere 'o' foi encontrado em %p.\n", found);
+  } else {
+    printf("O caractere 'o' não foi encontrado.\n");
+  }
+
+  return 0;
+}*/
