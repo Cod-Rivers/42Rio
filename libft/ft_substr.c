@@ -19,7 +19,9 @@ size_t len)
 	char	*copy;
 
 	i = 0;
-	copy = (char *) malloc(len + 1i);
+	copy = (char *) malloc(sizeof(char) * len + 1);
+	if (!copy)
+		return (NULL);
 	while (i < len)
 	{
 		copy[i] = s[start];

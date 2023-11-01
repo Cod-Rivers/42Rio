@@ -1,5 +1,5 @@
 # Ignorar a página inteira
-libft/libft-war-machine/*
 libft/.libftTester/*
-/libft-unit-test/*
+
 libft/warmachine/*
+libft-unit-test/*
