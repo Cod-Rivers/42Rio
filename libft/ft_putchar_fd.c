@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 14:29:16 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/01 14:04:19 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/07/27 10:41:44 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/07/27 13:30:42 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <unistd.h>
+
+void	ft_putchar_fd(char c, int fd)
+
 {
-	if ((c >= 65 && c <= 90)
-		|| (c <= 122 && c >= 97))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	write(fd, &c, 1);
 }
-/*int main (void)
-{
-	int c;
-	
-	c = '0';
-	
-	if (ft_isalpha(c))
-	{
-		printf("é alfabetico");
-	}
-	else
-	{
-		printf("não é");
-	}
-}*/

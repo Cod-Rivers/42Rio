@@ -16,16 +16,7 @@
 
 void	*ft_bzero(void *str, size_t n)
 {
-	size_t			i;
-	unsigned char	*temp;
-
-	temp = (unsigned char *)str;
-	i = 0;
-	while (i < n)
-	{
-		*(temp + i) = 0;
-		i++;
-	}
+	return (ft_memset(str, 0, n));
 }
 /*int main() 
 {

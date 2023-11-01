@@ -6,23 +6,23 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:38:03 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/27 16:14:40 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:59:49 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *temp;
-	
-	temp = (void*)malloc(nmemb * size);
-	if(!temp)
+	char	*temp;
+
+	temp = malloc(nmemb * size);
+	if (!temp)
 		return (NULL);
-	ft_bzero(temp,nmemb*size);
+	ft_bzero (temp, nmemb * size);
 	return (temp);
 }
-int main() 
+/*int main() 
 {
   int *my_array;
 
@@ -45,4 +45,4 @@ int main()
   free(my_array);
 
   return 0;
-}
+}*/

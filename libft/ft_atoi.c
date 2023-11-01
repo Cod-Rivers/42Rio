@@ -6,11 +6,10 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 11:31:30 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/26 16:30:52 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:50:13 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -28,7 +27,7 @@ int	ft_atoi(const char *str)
 	{
 		i++;
 	}
-	while ((str[i] == '-') || (str[i] == '+'))
+	if ((str[i] == '-') || (str[i] == '+'))
 	{
 		if (str[i++] == '-')
 		{
@@ -38,7 +37,7 @@ int	ft_atoi(const char *str)
 	while ((str[i]) >= '0' && (str[i] <= '9'))
 	{
 		res = (res * 10) + ((char) str[i++] - '0');
-	}	
+	}
 	return (res * sinal);
 }
 /*int	main(void)

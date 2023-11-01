@@ -13,6 +13,7 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 //#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *string, int c)
 {

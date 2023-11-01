@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/27 10:41:44 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/07/27 13:30:42 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/10/31 15:31:41 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/01 13:56:33 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char fd)
-
+char	*ft_substr(char const *s, unsigned int start,
+size_t len)
 {
-	write(fd, &c, 1);
+	size_t	i;
+	char	*copy;
+
+	i = 0;
+	copy = (char *) malloc(len + 1i);
+	while (i < len)
+	{
+		copy[i] = s[start];
+		i++;
+		start++;
+	}
+	copy [i] = '\0';
+	return (copy);
 }
+/*int	main(void)
+{
+	char const str[8] = "Riverson";
+	char *str2;
+
+	str2 = ft_substr(str, 2, 4);
+	printf("%s",str2);
+}*/

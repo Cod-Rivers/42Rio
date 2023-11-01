@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 13:00:58 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/26 15:46:21 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/01 13:46:36 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/01 13:49:04 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <stddef.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
@@ -33,13 +31,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			{
 				j++;
 				i++;
-			}			
-			if (j == ft_strlen(little1))
+			}
+			if (j == ft_strlen(little))
 				return ((char *) &big1[i]);
-			return ('\0');
 		}
 		i++;
 	}
+	return (NULL);
 }
 /*int main() 
 {

@@ -31,7 +31,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 		i++;
 	}
 	dst[i] = '\0';
-	printf("%i\n", (size_t)i);
 	return ((size_t)dst);
 }
 /*int main()
