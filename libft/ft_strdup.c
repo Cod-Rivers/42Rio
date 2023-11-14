@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:35:53 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/19 17:32:07 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/14 14:53:12 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/14 15:15:52 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char *ft_strdup(const char *s)
 {
-	if (c >= 97 && c <= 122)
+	char	*temp;
+	int		len;
+	int		i;
+
+	len = ft_strlen(s);
+	i = 0;
+	temp = (char *) malloc ((sizeof(char)) * len + 1);
+	if	(!temp)
+		return (NULL);
+	while(i < len)
 	{
-		c -= 32;
+		temp[i] = s[i];
+		i++;
 	}
-	return (c);
+	temp[i]=0;
+	return temp;
 }
+

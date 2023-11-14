@@ -6,7 +6,7 @@
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 15:31:41 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/01 13:56:33 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:17:55 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ size_t len)
 	copy [i] = '\0';
 	return (copy);
 }
-/*int	main(void)
+int	main(void)
 {
 	char const str[8] = "Riverson";
 	char *str2;
 
 	str2 = ft_substr(str, 2, 4);
 	printf("%s",str2);
-}*/
+}

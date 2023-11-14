@@ -6,7 +6,7 @@
 #    By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 19:00:36 by rivda-si          #+#    #+#              #
-#    Updated: 2023/10/19 15:38:06 by rivda-si         ###   ########.fr        #
+#    Updated: 2023/11/14 15:32:14 by rivda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ SRC =	ft_atoi.c \
 	ft_putnbr_fd.c
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fPIC
 OBJ = $(SRC:.c=.o)
 RM = rm -rf
 
