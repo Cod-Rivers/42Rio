@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim2.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,16 +15,23 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
+	int	i;
+	int	j;
 	int	len;
-
 	
 	if (!s1 || !set)
 		return (0);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	len = ft_strlen(s1);
-	result = malloc ((sizeof (char)) * len + 1);
-	result = ft_substr(s1, 0, len + 1);
+	i = 0;
+	j = ft_strlen(s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	while (j > i && ft_strchr(set, s1[j]))
+		j--;
+	len = j - i;
+	result = (char *)malloc(sizeof(char) * (len +1));
+	if (!result)
+		return (NULL);
+	result = ft_substr(s1, i, len + 1);
 	return (result);
 }
 /*int main (void)
