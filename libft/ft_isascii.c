@@ -9,10 +9,15 @@
 /*   Updated: 2023/11/01 14:03:22 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
-	return (c >= 0 && c <= 177);
+	if (c >= 0 && c <= 127)
+	{
+		return (1);
+	}
+	return (0);
 }
 /*int main (void)
 {

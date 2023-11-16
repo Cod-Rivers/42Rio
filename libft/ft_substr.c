@@ -17,11 +17,15 @@ size_t len)
 {
 	size_t	i;
 	char	*copy;
-
+	
+	if (!s || len == 0)
+		return (ft_strdup(""));
 	i = 0;
 	copy = (char *) malloc(sizeof(char) * len + 1);
 	if (!copy)
 		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
 	while (i < len)
 	{
 		copy[i] = s[start];
@@ -31,11 +35,11 @@ size_t len)
 	copy [i] = '\0';
 	return (copy);
 }
-int	main(void)
+/*int	main(void)
 {
 	char const str[8] = "Riverson";
 	char *str2;
 
 	str2 = ft_substr(str, 2, 4);
 	printf("%s",str2);
-}
+}*/

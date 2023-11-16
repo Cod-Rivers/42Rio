@@ -18,18 +18,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	c;
+	size_t	all;
 
+	if(dstsize == 0)
+		return (ft_strlen(src));
+	if(dstsize <= ft_strlen(src))
+		return (dstsize + ft_strlen(src));
 	i = 0;
-	c = dstsize;
-	while (src[i] != '\0')
+	c = ft_strlen(dst);
+	all = c + ft_strlen(src);
+	
+	while (src[i] != '\0' && c < (dstsize -1))
 	{
 		dst [c] = src [i];
 		i++;
 		c++;
 	}
 	dst [c] = '\0';
-	c = ft_strlen(dst);
-	return (c);
+	return (all);
 }
 /*int	main(void)
 {

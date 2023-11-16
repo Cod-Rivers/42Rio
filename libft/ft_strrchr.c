@@ -17,18 +17,16 @@
 
 char	*ft_strrchr(const char *string, int c)
 {
-	int		i;
 	int		len;
 	int		j;
 	char	*temp;
 
 	temp = (char *)string;
 	len = ft_strlen(temp);
-	i = 0;
 	j = len;
-	while (j - 1 > i)
+	while (j >= 0)
 	{
-		if (temp[j] == c)
+		if (temp[j] == (char)c)
 		{
 			return (&temp[j]);
 		}

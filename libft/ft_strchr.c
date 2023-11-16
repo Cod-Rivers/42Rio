@@ -17,20 +17,13 @@
 
 char	*ft_strchr(const char *string, int c)
 {
-	int		i;
-	char	*temp;
-
-	i = 0;
-	temp = (char *)string;
-	while (temp[i] != '\0')
+	while (*string != (char)c)
 	{
-		if (temp[i] == c)
-		{
-			return (&temp[i]);
-		}
-		i++;
+		if (!*string)
+			return (0);
+		string++;
 	}
-	return (NULL);
+	return ((char *)string);
 }
 /*int main() {
   char string[] = "Esta é uma string.";

@@ -19,10 +19,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	temp = (void *)s;
-	while (temp[i] != '\0' || i < n)
+	while (i < n)
 	{
 		if (temp[i] == c)
-			return ((void *)&temp[i]);
+			return ((void *)(temp + i));
 		i++;
 	}
 	return (NULL);
