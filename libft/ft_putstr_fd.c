@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 15:07:18 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/01 13:57:20 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/10/26 16:00:58 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/10/26 16:09:46 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include<unistd.h>
+#include "libft.h"
 
-void	ft_putnbr(int nb)
+void	ft_putstr_fd(char *str, int fd)
 {
-	char	x;
+	int		i;
+	int		c;
+	int		contlen;
+	char	d;
 
-	if (nb == -2147483648)
+	i = 0;
+	c = 0;
+	while (str[i] != '\0')
 	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		ft_putnbr(147483648);
+		i++;
 	}
-	else if (nb < 0)
+	contlen = i;
+	while (c < contlen)
 	{
-		write(1, "-", 1);
-		nb = nb * -1;
-		ft_putnbr(nb);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		x = '0' + nb;
-		write (1, &x, 1);
+		d = str[c];
+		write(fd, &d, 1);
+		c++;
 	}
 }
-/*int	main(void)
+/*int main(void)
 {
-	ft_putnbr(214748348);
+    char *string;
+
+    string = "riverson";
+    
+        
+    ft_putstr(string);
+    
 }*/

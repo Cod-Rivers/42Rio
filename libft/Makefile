@@ -42,7 +42,7 @@ SRC =	ft_atoi.c \
 	ft_strdup.c \
 	ft_strtrim.c \
 	ft_split.c \
-	#ft_putstr_fd.c \
+	ft_putstr_fd.c \
 	ft_putnbr_fd.c
 
 CC = cc
