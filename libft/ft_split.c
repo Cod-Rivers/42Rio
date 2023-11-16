@@ -43,21 +43,21 @@ static char	**allocate(char const *s, char c, char **var)
 	{
 		if (s[i] != c)
 			len++;
-		if (s[i] == c && s[i + 1] == 0)
+		if (s[i] == c || s[i + 1] == '\0')
 		{
 			var[o] = (char *) malloc (sizeof(char) * (unsigned int)(len + 1));
 			if (!(var[o]))
 				return (NULL);
-			while (s[i + 1] == c && s[i + 1] != '\0')
+			while (s[i + 1] == c && s[i] != '\0')
 			{
 				i++;
-				len = 0;
-				o++;
 			}
-			i++;
+			len = 0;
+			o++;
 		}
-		var[o] = 0;
+		i++;
 	}
+	var[o] = 0;
 	return (var);
 }
 
@@ -74,17 +74,17 @@ static char	**fsubstr(char const *s, char c, char **var)
 	{
 		if (s[i] != c)
 		{
-			var[size][o] = s[i];
-			o++;
+			var[o][size] = s[i];
+			size++;
 		}
 		if (s[i] == c || s[i + 1] == '\0')
 		{
-			var[size][o] = '\0';
+			var[o][size] = '\0';
 			o++;
-			size++;
-			while (s[i + 1] == c && s[i + 1] != '\0')
+			size = 0;
+			while (s[i + 1] == c && s[i] != '\0')
 			{
-				i++;
+				i++;	
 			}
 		}
 		i++;
