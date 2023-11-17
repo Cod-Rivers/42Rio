@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 18:57:46 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/26 15:53:27 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 16:22:59 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 16:23:02 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<stdio.h>
-//#include<string.h>
 #include "libft.h"
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)

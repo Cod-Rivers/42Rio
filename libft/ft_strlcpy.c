@@ -3,25 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 12:13:16 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/26 15:50:53 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 15:23:13 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 15:23:21 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
-//#include <stdio.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size)
 {
 	size_t	i;
 	size_t	len;
-	
+
 	i = 0;
 	len = ft_strlen(src);
-	
 	if (dst_size == 0)
 	{
 		return (len);

@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 16:22:09 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/17 16:22:13 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 12:30:06 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 15:27:34 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	unsigned int	i;
+	char			*point;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
+		i++;
+	point = (char *)malloc(sizeof(char) * (i + 1));
+	if (!point)
+		return (0);
+	i = 0;
+	while (s[i] != '\0')
 	{
+		point[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (i);
+	point[i] = '\0';
+	return (point);
 }

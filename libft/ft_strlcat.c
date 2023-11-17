@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/09 20:30:21 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/27 12:48:00 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 15:20:14 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 15:21:19 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<stdio.h>
-//#include<string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
@@ -27,9 +25,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize < c)
 		size = dstsize;
 	else
-		size = c; 	
+		size = c;
 	i = 0;
-	
 	all = size + ft_strlen(src);
 	while (src[i] != '\0' && c < (dstsize - 1))
 	{

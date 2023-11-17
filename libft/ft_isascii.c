@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 15:31:31 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/01 14:03:22 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:07:29 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 14:07:35 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_isascii(int c)

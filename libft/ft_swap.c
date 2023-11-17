@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/03 14:32:06 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/26 16:11:36 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 16:26:39 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 16:26:40 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include<unistd.h>
-//#include<stdio.h>
 #include "libft.h"
 
 void	ft_swap(int *a, int *b)

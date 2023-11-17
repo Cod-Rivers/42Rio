@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 21:13:58 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/08/08 21:16:17 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 16:24:11 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 16:24:14 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
+
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;

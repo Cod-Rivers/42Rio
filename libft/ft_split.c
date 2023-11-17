@@ -6,7 +6,7 @@
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:02:36 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/14 14:25:31 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:41:21 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ static size_t	ocorrences(char const *s, char c)
 	return (len + 1);
 }
 
+static int	verify1(char const *s, int i, char c)
+{
+	while (s[i + 1] == c && s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 static char	**allocate(char const *s, char c, char **var)
 {
 	int	o;
@@ -48,10 +57,7 @@ static char	**allocate(char const *s, char c, char **var)
 			var[o] = (char *) malloc (sizeof(char) * (unsigned int)(len + 1));
 			if (!(var[o]))
 				return (NULL);
-			while (s[i + 1] == c && s[i] != '\0')
-			{
-				i++;
-			}
+			i = verify1 (s, i, c);
 			len = 0;
 			o++;
 		}
@@ -80,12 +86,9 @@ static char	**fsubstr(char const *s, char c, char **var)
 		if (s[i] == c || s[i + 1] == '\0')
 		{
 			var[o][size] = '\0';
-			o++;
 			size = 0;
-			while (s[i + 1] == c && s[i] != '\0')
-			{
-				i++;	
-			}
+			i = verify1 (s, i, c);
+			o++;
 		}
 		i++;
 	}

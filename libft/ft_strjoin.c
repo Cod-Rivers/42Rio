@@ -6,7 +6,7 @@
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 15:36:10 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/14 14:27:05 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:07:31 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 	size_t	len;
-	
+
 	if (!s1 || !s2)
 		return (0);
-
 	len = (ft_strlen(s2) + ft_strlen(s1));
 	new = (char *) malloc ((sizeof(char)) * len + 1);
 	if (!new)
@@ -35,14 +34,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	while (j < ft_strlen(s2))
 	{
-		new[i] = s2[j];
-		j++;
-		i++;
+		new[i++] = s2[j++];
 	}
 	new[i] = '\0';
 	return (new);
 }
-
 /*int main (void)
 {
 	const char *s1[] = {"rio"};

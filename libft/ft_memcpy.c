@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 14:47:02 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/18 19:35:55 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:14:34 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 14:15:43 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*temp;
 	unsigned char	*temp2;
 
 	i = 0;
 	temp = (unsigned char *) src;
 	temp2 = (unsigned char *)dest;
-	if(!dest && !src)
+	if (!dest && !src)
 		return (dest);
 	while (i < n)
 	{

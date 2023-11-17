@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 19:15:31 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/18 16:09:32 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:03:14 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 14:03:27 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
 #include "libft.h"
 
 void	*ft_bzero(void *str, size_t n)

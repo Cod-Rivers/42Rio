@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 18:36:48 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/26 15:57:11 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 16:25:01 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 16:25:15 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *string, int c)

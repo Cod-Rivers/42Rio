@@ -3,15 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 16:45:22 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/10/18 16:08:35 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:17:26 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 14:17:28 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-//#include <string.h>
 #include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)

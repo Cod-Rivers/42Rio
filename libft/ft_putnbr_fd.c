@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 15:07:18 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/01 13:57:20 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:20:27 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 14:21:41 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
 #include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
@@ -21,13 +20,13 @@ void	ft_putnbr_fd(int nb, int fd)
 	{
 		write(fd, "-", 1);
 		write(fd, "2", 1);
-		ft_putnbr_fd(147483648,fd);
+		ft_putnbr_fd(147483648, fd);
 	}
 	else if (nb < 0)
 	{
 		write(fd, "-", 1);
 		nb = nb * -1;
-		ft_putnbr_fd(nb,fd);
+		ft_putnbr_fd(nb, fd);
 	}
 	else if (nb > 9)
 	{

@@ -43,10 +43,14 @@ SRC =	ft_atoi.c \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_putstr_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_putendl_fd.c
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fPIC
+CFLAGS = -Wall -Wextra -Werror 
 OBJ = $(SRC:.c=.o)
 RM = rm -rf
 
