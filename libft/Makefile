@@ -6,7 +6,7 @@
 #    By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 19:00:36 by rivda-si          #+#    #+#              #
-#    Updated: 2023/11/14 15:32:14 by rivda-si         ###   ########.fr        #
+#    Updated: 2023/11/18 02:33:46 by rivda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRC =	ft_atoi.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_putendl_fd.c
-
+	  
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 OBJ = $(SRC:.c=.o)
@@ -63,7 +63,7 @@ $(NAME):$(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	$(CC) -nostartfiles $(CFLAGS) $(SRC)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 clean:

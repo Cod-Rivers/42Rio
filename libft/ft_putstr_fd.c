@@ -21,6 +21,8 @@ void	ft_putstr_fd(char *str, int fd)
 
 	i = 0;
 	c = 0;
+	if (!str)
+		return;
 	while (str[i] != '\0')
 	{
 		i++;
