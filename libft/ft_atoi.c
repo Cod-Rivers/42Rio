@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sinal);
 }
-/*int	main(void)
+int	main(void)
 {
 
 	char str[] = "     ---+--+1234ab567";
@@ -48,4 +48,4 @@ int	ft_atoi(const char *str)
 
 	var = ft_atoi(str);
 	printf("%d",var);
-}*/
+}

@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 }
 /*int main() 
 {
-  char *big = "oh no not the empty string !";
+  char *big = "RIverson Morais  !";
   char *little = "";
   char *found;
 
