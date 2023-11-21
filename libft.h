@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivda-si <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 19:01:23 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/14 15:05:24 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/21 12:02:24 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/21 12:02:35 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <string.h>
 
 /*Lib Functions*/

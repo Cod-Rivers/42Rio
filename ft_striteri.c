@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 16:26:39 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/17 16:26:40 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 12:24:29 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/21 11:52:15 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swap(int *a, int *b)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	c;
+	int	i;
 
-	c = *b;
-	*b = *a;
-	*a = c;
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i] != '\0')
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }
-/*int main(void)
-{
-    int x;
-    int y;
-
-    x = 1;
-    y = 2;
-
-    ft_swap(&x, &y);
-
-    printf(" %d, %d", x, y);
-}*/

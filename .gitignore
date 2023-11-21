@@ -1,5 +1,0 @@
-# Ignorar a página inteira
-libft/.libftTester/*
-
-libft/warmachine/*
-libft-unit-test/*

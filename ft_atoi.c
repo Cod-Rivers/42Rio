@@ -6,7 +6,7 @@
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:01:33 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/17 14:01:51 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:48:32 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sinal);
 }
-int	main(void)
+/*int	main(void)
 {
 
 	char str[] = "     ---+--+1234ab567";
@@ -48,4 +48,4 @@ int	main(void)
 
 	var = ft_atoi(str);
 	printf("%d",var);
-}
+}*/

@@ -1,34 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 15:20:14 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/17 15:21:19 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:22:10 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/21 11:51:24 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_putstr_fd(char *str, int fd)
 {
-	size_t	i;
-	size_t	c;
-	
-	if (!dstsize)
-		return (0);
-	if (dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen(src));
-	c = ft_strlen(dst);
+	int		i;
+	int		c;
+	int		contlen;
+	char	d;
+
 	i = 0;
-	while (src[i] != '\0' && c + 1 < (dstsize))
+	c = 0;
+	if (!str)
+		return ;
+	while (str[i] != '\0')
 	{
-		dst [c] = src [i];
 		i++;
+	}
+	contlen = i;
+	while (c < contlen)
+	{
+		d = str[c];
+		write(fd, &d, 1);
 		c++;
 	}
-	dst [c] = '\0';
-	return (ft_strlen(dst)+ft_strlen(&src[i]));
 }
+/*int main(void)
+{
+    char *string;
+
+    string = "riverson";
+    
+        
+    ft_putstr(string);
+    
+}*/
