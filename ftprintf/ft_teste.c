@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_teste.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:11:37 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/27 14:49:30 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/27 15:26:48 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/27 15:38:49 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdarg.h>
 
-char ft_printchar (char letter, ...)
+void teste (int n, ...)
 {
-	ft_putchar_fd(1, &letter, 1);
+	//Inicializa o ponteiro va_list
+	va_list args;
+	va_start (args, n);
+
+	//itera sobre os argumentos
+	for (int i = 0; i <= n; i++)
+	{
+		printf("%d: %d\n", i, va_arg(args, int));
+	}
+	// Finaliza o ponteiro va_list
+	va_end(args);
 }
 
-
-int	ft_printf(const char *print, ...)
+int main() 
 {
-	va_list	*str;
-	va_start (str, print)
-
-	char	number = var_arg(str, char);
-	if (!str)
-		return (0);
-	
-	str = (char *) malloc((size of(char)) * ft_strlen(*) + 1);
-
+	//chama a função teste()
+	teste(3, 5, 9);
+	return 0;
 }
-
