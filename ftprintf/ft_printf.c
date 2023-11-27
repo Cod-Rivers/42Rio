@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 15:20:14 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/21 11:49:44 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/21 13:11:37 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/21 13:12:02 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdarg.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void va_start(va_list %i, int inteiro)
 {
-	size_t	i;
-	size_t	c;
 
-	if (!dstsize)
-		return (0);
-	if (dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen(src));
-	c = ft_strlen(dst);
-	i = 0;
-	while (src[i] != '\0' && c + 1 < (dstsize))
-	{
-		dst [c] = src [i];
-		i++;
-		c++;
-	}
-	dst [c] = '\0';
-	return (ft_strlen(dst)+ft_strlen(&src[i]));
 }
+
+
+int	ft_printf(const char *print, ...)
+{
+	size_t	*str;
+	
+	if (!str)
+		return (0);
+	str = (char *) malloc((size of(char)) * ft_strlen(*) + 1);
+
+}
+
