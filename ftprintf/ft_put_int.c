@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_put_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:11:37 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/27 14:49:30 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/12/01 12:42:22 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/12/01 12:48:29 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_printf(const char *print, ...)
+void	ft_print_int (int number, ...)
 {
-	va_list	*str;
-	va_start (str, print)
-
-	char	number = var_arg(str, char);
-	if (!str)
-		return (0);
-	
-	str = (char *) malloc((size of(char)) * ft_strlen(*) + 1);
-
+	ft_putnbr_fd(1, &number, 1);
 }
-

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdarg.h>
 #include <string.h>
 
@@ -20,24 +21,68 @@ void teste (const char *str, ...)
 	va_list args;
 	va_start (args, str);
 	int	i;
-	int	j;
+	int	c;
+	
 	
 	i = 0;
+	c = '%';
 		//itera sobre os argumentos
 	{
 		while (i < strlen(str))
 		{	
+			
 			if ( str[i] == '%')
 			{
-				(printf("contém  no indice %d\n", i));
+				if (str[i + 1] == 'd')
+				{
+					printf("\n contém  um double ");
+				}
+				else if (str[i + 1] == 'i')
+				{
+					printf("contem um inteiro");
+					
+				}
+				else if (str[i + 1] == 'p')
+				{
+					printf("contem um endereço para ponteiro");
+					
+				}
+				else if (str[i + 1] == 's')
+				{
+					printf("contem uma string");
+				}
+				else if (str[i +1] == 'c')
+				{
+					printf ("contem um char");
+				}
+				else if (str[i + 1] == 'u')
+				{
+					printf ("contem um unsigned int");
+				}
+				else if (str[i + 1] == 'x')
+				{
+					printf ("contem um exadecimal minusculo");
+				}
+				else if (str[i + 1] == 'X')
+				{
+					printf ("contem um exadecimal Maiusculo \n");
+				}
+				else if (str[i +1] == '%')
+				{
+					printf ("contei outro sinal de porcentagem");
+				}
 				i++;
-				j++;
+					
 			}
-			else 
+			else
+				write (1, &str[i], 1);
+			i++;
 				
-				i++;
-		
+				
 		}
+		if (!strchr(str, c))
+				printf("não contem o sinal");
+				
 		
 	}
 	// Finaliza o ponteiro va_list
@@ -47,6 +92,6 @@ void teste (const char *str, ...)
 int main() 
 {
 	//chama a função teste()
-	teste("ag%ua%" );
+	teste("agu%ua%d" );
 	return 0;
 }

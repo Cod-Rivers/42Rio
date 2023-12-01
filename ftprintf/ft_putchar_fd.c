@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:11:37 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/27 14:49:30 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:18:17 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/17 14:18:22 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_printf(const char *print, ...)
+void	ft_putchar_fd(char c, int fd)
 {
-	va_list	*str;
-	va_start (str, print)
-
-	char	number = var_arg(str, char);
-	if (!str)
-		return (0);
-	
-	str = (char *) malloc((size of(char)) * ft_strlen(*) + 1);
-
+	write(fd, &c, 1);
 }
-

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:11:37 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/27 14:49:30 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/29 16:29:32 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/29 16:33:10 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+# define PRINTF_H
 
-int	ft_printf(const char *print, ...)
-{
-	va_list	*str;
-	va_start (str, print)
+# include <unistd.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <string.h>
 
-	char	number = var_arg(str, char);
-	if (!str)
-		return (0);
-	
-	str = (char *) malloc((size of(char)) * ft_strlen(*) + 1);
+/*lib functions*/
+void	ft_putchar_fd(char c, int fd);
+int	ft_print_digit(long nb, int base);
 
-}
-
+#endif
