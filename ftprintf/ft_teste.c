@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include "printf"
 
 void teste (int n, ...)
 {

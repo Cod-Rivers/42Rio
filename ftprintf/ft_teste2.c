@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <string.h>
+
+#include "printf.h"
 
 void teste (const char *str, ...)
 {
 	//Inicializa o ponteiro va_list
-	va_list args;
-	va_start (args, str);
+	va_list argpoint;
+	va_start (argpoint, str);
 	int	i;
 	int	c;
 	
@@ -35,41 +33,40 @@ void teste (const char *str, ...)
 			{
 				if (str[i + 1] == 'd')
 				{
-					printf("\n contém  um double ");
+					base10(va_arg(argpoint, int));
 				}
 				else if (str[i + 1] == 'i')
 				{
-					printf("contem um inteiro");
-					
+					ft_putnbr_fd(va_arg(argpoint, int));					
 				}
 				else if (str[i + 1] == 'p')
 				{
-					printf("contem um endereço para ponteiro");
+					ft_printp(va_arg(argpoint, unsigned long long));
 					
 				}
 				else if (str[i + 1] == 's')
 				{
-					printf("contem uma string");
+					ft_putstr_fd(va_arg(argpoint, char*));
 				}
 				else if (str[i +1] == 'c')
 				{
-					printf ("contem um char");
+					ft_print_char(va_arg(argpoint, int)); //obs(nesse caso um tipo char se transforma em int em função variadicas)
 				}
 				else if (str[i + 1] == 'u')
 				{
-					printf ("contem um unsigned int");
+					ft_putnbr_fd(va_arg(argpoint, unsigned int));
 				}
 				else if (str[i + 1] == 'x')
 				{
-					printf ("contem um exadecimal minusculo");
+					base16(va_arg(argpoint, unsigned int));
 				}
 				else if (str[i + 1] == 'X')
 				{
-					printf ("contem um exadecimal Maiusculo \n");
+					binariosup(va_arg(argpoint, unsigned int));
 				}
 				else if (str[i +1] == '%')
 				{
-					printf ("contei outro sinal de porcentagem");
+					write(1, (char *)'%',1);
 				}
 				i++;
 					
@@ -86,12 +83,22 @@ void teste (const char *str, ...)
 		
 	}
 	// Finaliza o ponteiro va_list
-	va_end(args);
+	va_end(argpoint);
 }
 
 int main() 
 {
+	int i;
+	unsigned int u;
+
+
+	char *str = "esta andando";
+	u = 42;
+
+	i = -10;
 	//chama a função teste()
-	teste("agu%ua%d" );
+	teste("agu %x a %d e %i e %X e %u e %s e %p", i, i, i, i, u, str, str);
+	printf("\n");
+	printf("agu %x a %d e %i e %X e %u e %s e %p", i, i, i, i, u, str, str);
 	return 0;
 }

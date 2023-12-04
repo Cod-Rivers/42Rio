@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-void	ft_putstr_fd(char *str, int fd)
+void	ft_putstr_fd(char *str)
 {
 	int		i;
 	int		c;
@@ -31,7 +31,7 @@ void	ft_putstr_fd(char *str, int fd)
 	while (c < contlen)
 	{
 		d = str[c];
-		write(fd, &d, 1);
+		write(1, &d, 1);
 		c++;
 	}
 }
