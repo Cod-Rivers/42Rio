@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-void	ft_putstr_fd(char *str)
+int	ft_putstr_fd(char *str)
 {
 	int		i;
 	int		c;
@@ -22,7 +22,7 @@ void	ft_putstr_fd(char *str)
 	i = 0;
 	c = 0;
 	if (!str)
-		return ;
+		return (0);
 	while (str[i] != '\0')
 	{
 		i++;
@@ -31,9 +31,10 @@ void	ft_putstr_fd(char *str)
 	while (c < contlen)
 	{
 		d = str[c];
-		write(1, &d, 1);
+		(write(1, &d, 1));
 		c++;
 	}
+	return (*str);
 }
 /*int main(void)
 {
@@ -42,6 +43,6 @@ void	ft_putstr_fd(char *str)
     string = "riverson";
     
         
-    ft_putstr(string);
+    ft_putstr_fd(string);
     
 }*/

@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-void	ft_putnbr_fd(int nb)
+int	ft_putnbr_fd(int nb)
 {
 	char	x;
 
@@ -38,4 +38,5 @@ void	ft_putnbr_fd(int nb)
 		x = '0' + nb;
 		ft_print_char(x);
 	}
+	return (0);
 }

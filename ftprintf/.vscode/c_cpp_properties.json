@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            // Configurações do seu compilador aqui
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            // ...
+        }
+    ],
+    "version": 4
+}

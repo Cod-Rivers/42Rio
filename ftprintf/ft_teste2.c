@@ -13,74 +13,49 @@
 
 #include "printf.h"
 
+static int ft_select_symbol(va_list argpoint, const char *str)
+	{
+		if (*str == 'd')
+			return (ft_putnbr_fd(va_arg(argpoint, int)));
+		else if (*str == 'i')
+			 return (ft_putnbr_fd(va_arg(argpoint, int)));					
+		else if (*str == 'p')
+			 return (ft_printp(va_arg(argpoint, unsigned long long)));
+		//else if (*str == 's')
+		//	 return (ft_putstr_fd(va_arg(argpoint, char*)));
+		else if (*str == 'c')
+			 return (ft_print_char(va_arg(argpoint, int))); //obs(nesse caso um tipo char se transforma em int em função variadicas)
+		/*else if (*str == 'u')
+			 return (ft_putnbr_fd(va_arg(argpoint, unsigned int)));
+		else if (*str == 'x')
+			 return (base16(va_arg(argpoint, unsigned int)));
+		else if (*str == 'X')
+			 return (binariosup(va_arg(argpoint, unsigned int)));*/
+		else if (*str == '%')
+			 return (write(1, (char *)'%',1));
+		return (0);
+	}
+
 void teste (const char *str, ...)
 {
 	//Inicializa o ponteiro va_list
 	va_list argpoint;
 	va_start (argpoint, str);
-	int	i;
-	int	c;
-	
-	
-	i = 0;
-	c = '%';
+
 		//itera sobre os argumentos
 	{
-		while (i < strlen(str))
+		while (*str)
 		{	
 			
-			if ( str[i] == '%')
+			if ( *str == '%')
 			{
-				if (str[i + 1] == 'd')
-				{
-					base10(va_arg(argpoint, int));
-				}
-				else if (str[i + 1] == 'i')
-				{
-					ft_putnbr_fd(va_arg(argpoint, int));					
-				}
-				else if (str[i + 1] == 'p')
-				{
-					ft_printp(va_arg(argpoint, unsigned long long));
-					
-				}
-				else if (str[i + 1] == 's')
-				{
-					ft_putstr_fd(va_arg(argpoint, char*));
-				}
-				else if (str[i +1] == 'c')
-				{
-					ft_print_char(va_arg(argpoint, int)); //obs(nesse caso um tipo char se transforma em int em função variadicas)
-				}
-				else if (str[i + 1] == 'u')
-				{
-					ft_putnbr_fd(va_arg(argpoint, unsigned int));
-				}
-				else if (str[i + 1] == 'x')
-				{
-					base16(va_arg(argpoint, unsigned int));
-				}
-				else if (str[i + 1] == 'X')
-				{
-					binariosup(va_arg(argpoint, unsigned int));
-				}
-				else if (str[i +1] == '%')
-				{
-					write(1, (char *)'%',1);
-				}
-				i++;
-					
+				str++;
+				ft_select_symbol(argpoint, str);	
 			}
 			else
-				write (1, &str[i], 1);
-			i++;
-				
-				
+				ft_print_char(*str);
+			str++;
 		}
-		if (!strchr(str, c))
-				printf("não contem o sinal");
-				
-		
 	}
 	// Finaliza o ponteiro va_list
 	va_end(argpoint);
@@ -89,16 +64,19 @@ void teste (const char *str, ...)
 int main() 
 {
 	int i;
-	unsigned int u;
+	//unsigned int u;
 
 
-	char *str = "esta andando";
-	u = 42;
+	char *str;
+	char z;
+	str = "esta andando";
+	//u = 42;
+	z = '@';
 
-	i = -10;
+	i = -4046;
 	//chama a função teste()
-	teste("agu %x a %d e %i e %X e %u e %s e %p", i, i, i, i, u, str, str);
+	teste("agu %i a %d a ponteiro =%p a char = %c minha", i, i, str, z);
 	printf("\n");
-	printf("agu %x a %d e %i e %X e %u e %s e %p", i, i, i, i, u, str, str);
+	printf("agu %i a %d a ponteiro = %p a char = %c original", i, i, str, z);
 	return 0;
 }

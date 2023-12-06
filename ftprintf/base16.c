@@ -1,23 +1,25 @@
 #include "printf.h"
 
-static void verify_index(int index)
+static int verify_index(int index)
 {
-    if (index == 10)
-        ft_print_char('a');
+    if (index > 15)
+		return (1);
+	if (index == 10)
+        return ft_print_char('a');
     else if (index == 11)
-        ft_print_char('b');
+        return ft_print_char('b');
     else if (index == 12)
-        ft_print_char('c');
+        return ft_print_char('c');
     else if (index == 13)
-        ft_print_char('d');
+        return ft_print_char('d');
     else if (index == 14)
-        ft_print_char('e');
-    else if (index == 15)
-        ft_print_char('f');         
+        return ft_print_char('e');
+    
+    return ft_print_char('f');        	    
 }
-void    base16(unsigned long long n)
+int    base16(unsigned long n)
 	{
-	    int    x;
+	    int	x;
 	    int j;
 	    int y;
 	    int binary[32];
@@ -43,16 +45,19 @@ void    base16(unsigned long long n)
           }        
           else
           {
-            ft_putnbr_fd(y);
+            (ft_putnbr_fd(y));
 	        j--;
           }
 	    }
+		return (*binary);
 	}
 	
 	/*int main (void)
 	{
-	    int x = 46046;
+	    int x = -46046;
 	
-	    binarios(x);
+	    base16(x);
+		printf("\n");
+		printf("%x",-46046);
 	    return 0;
 	}*/
