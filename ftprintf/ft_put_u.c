@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_put_.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 16:27:28 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/11/29 16:29:15 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/11/17 14:20:27 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/11/18 06:10:36 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_print_char(const char c)
+int	ft_put_u(unsigned int nb)
 {
-	return (write(1, &c, 1));
+	unsigned int    x;
+
+	if (nb > 9)
+	{
+		ft_put_u(nb / 10);
+		ft_put_u(nb % 10);
+	}
+	else
+	{
+		x = '0' + nb;
+		ft_print_char(x);
+	}
+	return (0);
 }

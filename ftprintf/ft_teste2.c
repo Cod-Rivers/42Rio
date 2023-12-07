@@ -21,18 +21,18 @@ static int ft_select_symbol(va_list argpoint, const char *str)
 			 return (ft_putnbr_fd(va_arg(argpoint, int)));					
 		else if (*str == 'p')
 			 return (ft_printp(va_arg(argpoint, unsigned long long)));
-		//else if (*str == 's')
-		//	 return (ft_putstr_fd(va_arg(argpoint, char*)));
+		else if (*str == 's')
+			 return (ft_putstr_fd(va_arg(argpoint, char*)));
 		else if (*str == 'c')
 			 return (ft_print_char(va_arg(argpoint, int))); //obs(nesse caso um tipo char se transforma em int em função variadicas)
-		/*else if (*str == 'u')
-			 return (ft_putnbr_fd(va_arg(argpoint, unsigned int)));
+		else if (*str == 'u')
+			 return (ft_put_u(va_arg(argpoint, unsigned int)));
 		else if (*str == 'x')
 			 return (base16(va_arg(argpoint, unsigned int)));
 		else if (*str == 'X')
-			 return (binariosup(va_arg(argpoint, unsigned int)));*/
+			 return (binariosup(va_arg(argpoint, unsigned int)));
 		else if (*str == '%')
-			 return (write(1, (char *)'%',1));
+			 return ft_print_char('%');
 		return (0);
 	}
 
@@ -64,19 +64,19 @@ void teste (const char *str, ...)
 int main() 
 {
 	int i;
-	//unsigned int u;
+	unsigned int u;
 
 
 	char *str;
 	char z;
 	str = "esta andando";
-	//u = 42;
+	u = -42;
 	z = '@';
 
 	i = -4046;
 	//chama a função teste()
-	teste("agu %i a %d a ponteiro =%p a char = %c minha", i, i, str, z);
+	teste("agu %i a %d a ponteiro =%p a  string = %s char = %c numero absoluto= %u  examinusc = %x examais= %X minha", i, i, str, str, z, u, i, i);
 	printf("\n");
-	printf("agu %i a %d a ponteiro = %p a char = %c original", i, i, str, z);
+	printf("agu %i a %d a ponteiro = %p a string = %s char = %c numero absoluto= %u examinusc = %x examais= %X original", i, i, str, str, z, u, i, i);
 	return 0;
 }
