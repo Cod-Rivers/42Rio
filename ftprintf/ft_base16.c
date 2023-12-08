@@ -6,63 +6,51 @@
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 12:39:08 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/12/07 12:45:11 by rivda-si         ###   ########.fr       */
+/*   Updated: 2023/12/08 15:13:26 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static int	verify_index(int index)
+int	ft_base16(unsigned long long n, const char c)
 {
-	if (index > 15)
-		return (1);
-	if (index == 10)
-		return (ft_print_char('a'));
-	else if (index == 11)
-		return (ft_print_char('b'));
-	else if (index == 12)
-		return (ft_print_char('c'));
-	else if (index == 13)
-		return (ft_print_char('d'));
-	else if (index == 14)
-		return (ft_print_char('e'));
-	return (ft_print_char('f'));
-}
+	char	hexadecimal[100];
+	int		rest;
+	int		i;
+	int		j;
 
-int	base16(unsigned long n)
-{
-	int	x;
-	int	j;
-	int	y;
-	int	binary[32];
-
-	x = 0;
-	j = 0;
-	while (n != 0)
+	if (n == 0)
+		return (write(1, "0", 1));
+	i = 0;
+	while (n > 0)
 	{
-		x = (n % 16);
-		binary[j] = x;
-		n = n / 16;
-		j++;
-	}
-	while (j > 0)
-	{
-		y = 0;
-		y = binary[j - 1];
-		if (y > 9)
-			verify_index(y);
+		rest = n % 16;
+		if (rest < 10)
+			hexadecimal[i] = rest + '0';
 		else
-			(ft_putnbr_fd(y));
+			hexadecimal[i] = rest - 10 + c;
+		i++;
+		n = n / 16;
+	}
+	j = i - 1;
+	while (j >= 0)
+	{
+		write(1, &hexadecimal[j], 1);
 		j--;
 	}
-	return (*binary);
+	return (i);
 }
-	/*int main (void)
+/*	int main (void)
 	{
-		int x = -46046;
+		int x = -42;
 	
-		base16(x);
+		ft_base16(x,'A');
 		printf("\n");
-		printf("%x",-46046);
+		printf("%X",-42);
+		printf("\n");
+		printf("orig=%d", printf("%X",-42));
+		printf("\n");		
+		printf("minha=%d", ft_base16(-42,'A'));
+		
 		return 0;
 	}*/

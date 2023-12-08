@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr_fd(char *str)
 {
@@ -19,6 +19,8 @@ int	ft_putstr_fd(char *str)
 	int		contlen;
 	char	d;
 
+	if (!str)
+		return (write (1, "(null)", 6));
 	i = 0;
 	c = 0;
 	if (!str)
@@ -34,7 +36,7 @@ int	ft_putstr_fd(char *str)
 		(write(1, &d, 1));
 		c++;
 	}
-	return (*str);
+	return (i);
 }
 /*int main(void)
 {

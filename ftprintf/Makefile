@@ -12,9 +12,17 @@
 
 # Makefile
 
-NAME = printf.a
+NAME = libftprintf.a
 
-SRC = ft_putchar.c
+SRC =	ft_print_char.c\
+	ft_printf.c\
+	ft_putnbr_fd.c\
+	ft_putstr_fd.c\
+	ft_put_u.c\
+	ft_base16.c\
+	ft_printp.c
+	
+
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -25,3 +33,20 @@ all:$(NAME)
 
 $(NAME) :$(OBJ)
 		ar rcs $(NAME) $(OBJ)
+		
+%.o:%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+so:
+	$(CC) -nostartfiles $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libftprintf.so $(OBJ)
+	
+clean:
+	$(RM) $(OBJ)
+	
+fclean:clean
+	$(RM) $(NAME)
+	
+re:fclean all
+
+.PHONY: all clean fclean re
