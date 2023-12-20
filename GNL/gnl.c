@@ -1,53 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_u.c                                         :+:      :+:    :+:   */
+/*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 14:20:27 by rivda-si          #+#    #+#             */
-/*   Updated: 2023/12/07 14:10:04 by rivda-si         ###   ########.fr       */
+/*   Created: 2023/12/20 14:51:58 by rivda-si          #+#    #+#             */
+/*   Updated: 2023/12/20 14:52:02 by rivda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+# include "gnl.h"
 
-int	capture(unsigned int nb)
+
+
+int main (void)
 {
-	int	i;
+	int		fd;
+	char	buf[256];
+	int		chars_read;
 
-	if (nb == 0)
-		return (1);
-	i = 0;
-	while (nb != 0)
+	fd = open("text.txt", O_CREAT | O_RDONLY);
+
+	while ((chars_read = read (fd, buf, size_t 10)));
 	{
-		nb = nb / 10;
-		i++;
+		buf[chars_read] = '\0';
+		printf("buf %s", buf);
 	}
-	return (i);
-}
-
-void	ft_finaly2(unsigned int nb)
-{
-	int	x;
-
-	if (nb > 9)
-	{
-		ft_put_u(nb / 10);
-		ft_put_u(nb % 10);
-	}
-	else
-	{
-		x = '0' + nb;
-		ft_print_char(x);
-	}
-}
-
-int	ft_put_u(unsigned int nb)
-{
-	int	i;
-
-	i = capture(nb);
-	ft_finaly2(nb);
-	return (i);
+	return (0);
 }
