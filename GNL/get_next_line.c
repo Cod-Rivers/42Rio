@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 	return (NULL);
 }
 
-/*int	main (void)
+int	main (void)
 {
 	int		fd;
 	char	buf[256];
@@ -118,4 +118,4 @@ char	*get_next_line(int fd)
 		ft_printf("buf %s",get_next_line(fd));
 	
 	return (0);
-}*/
+}

@@ -20,7 +20,6 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "ftprintf.h"
 
 int		ft_printf(const char *str, ...);
 int		ft_strlen(char *str);
