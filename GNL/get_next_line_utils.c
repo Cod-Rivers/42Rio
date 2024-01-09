@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.h                                              :+:      :+:    :+:   */
+/*   get_next_line_utils.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -27,20 +27,20 @@ int	ft_strlen(char *str)
 char	*resize_buffer(char *buffer)
 {
 	char	*resized_buffer;
-	int	len_buffer;
-	int	i;
-	int	resize_len;
+	int		len_buffer;
+	int		i;
+	int		resize_len;
 
 	len_buffer = ft_strlen(buffer);
 	resize_len = len_buffer + BUFFER_SIZE + 1;
 	resized_buffer = (char *)malloc(sizeof(char) * resize_len);
 	i = 0;
-	while(i < len_buffer)
+	while (i < len_buffer)
 	{
 		resized_buffer[i] = buffer[i];
 		i++;
 	}
-	while (i < len_buffer +BUFFER_SIZE + 1)
+	while (i < len_buffer + BUFFER_SIZE + 1)
 	{
 		resized_buffer[i] = '\0';
 		i++;
@@ -49,16 +49,16 @@ char	*resize_buffer(char *buffer)
 	return (resized_buffer);
 }
 
-char	*remove_extracted_line(char *buffer, int len)
+char	*remove_ext_line(char *buffer, int len)
 {
 	char	*resized_buffer;
-	int	i;
-	int	resized_len;
+	int		i;
+	int		resized_len;
 
-	resized_len = ft_strlen(buffer +len) + 1;
+	resized_len = ft_strlen(buffer + len) + 1;
 	resized_buffer = (char *)malloc(sizeof (char) * resized_len);
 	i = 0;
-	while (buffer[len +i])
+	while (buffer[len + i])
 	{
 		resized_buffer[i] = buffer[len + i];
 		i++;
@@ -66,5 +66,4 @@ char	*remove_extracted_line(char *buffer, int len)
 	resized_buffer[i] = '\0';
 	free(buffer);
 	return (resized_buffer);
-
 }

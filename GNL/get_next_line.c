@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gnl.c                                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivda-si <rivda-si@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,24 +11,17 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
-char	*extract_line(char * buffer, int nb_read)
-{
-	if(nb_read == 0)
-		return (extract_line_with_no_break(buffer));
-	return (extract_line_with_break(buffer));
-}
 
-char	*extract_line_with_no_break(char *str)
+char	*ext_line_with_no_break(char *str)
 {
 	char	*line;
-	int	len_str;
-	int	i;
+	int		len_str;
+	int		i;
 
 	len_str = ft_strlen(str);
 	line = (char *)malloc(sizeof(char) * (len_str + 1));
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		line[i] = str[i];
 		i++;
@@ -37,15 +30,15 @@ char	*extract_line_with_no_break(char *str)
 	return (line);
 }
 
-char	*extract_line_with_break(char *str)
+char	*ext_line_with_break(char *str)
 {
 	char	*line;
-	int	i;
+	int		i;
 
 	i = 0;
-	while(str[i] != '\n')
+	while (str[i] != '\n')
 		i++;
-	line = (char *)malloc(sizeof(char) * ( i + 2 ));
+	line = (char *)malloc(sizeof(char) * (i + 2));
 	i = 0;
 	while (str[i] != '\n')
 	{
@@ -57,14 +50,19 @@ char	*extract_line_with_break(char *str)
 	return (line);
 }
 
-
+char	*ext_line(char *buffer, int nb_read)
+{
+	if (nb_read == 0)
+		return (ext_line_with_no_break(buffer));
+	return (ext_line_with_break(buffer));
+}
 
 // verifica se tem \n
-int	has_line(char * str, int nb_read)
+int	has_line(char *str, int nb_read)
 {
-	int n;
+	int	n;
 
-	if(!str)
+	if (!str)
 		return (0);
 	n = 0;
 	while (str[n])
@@ -75,25 +73,25 @@ int	has_line(char * str, int nb_read)
 	}
 	if (nb_read == 0)
 		return (ft_strlen(str));
-	return(0);
+	return (0);
 }
 
 char	*get_next_line(int fd)
 {
-	int		nb_read;
-	int		len_line;
+	int			nb_read;
+	int			len_line;
 	char		*line;
 	static char	*buffer;
 
 	nb_read = 1;
 	line = "";
-	while((*line == '\0' && buffer && *buffer) || (nb_read > 0 && fd >= 0))
+	while ((*line == '\0' && buffer && *buffer) || (nb_read > 0 && fd >= 0))
 	{
 		len_line = has_line(buffer, nb_read);
 		if (len_line)
 		{
-			line = extract_line(buffer, nb_read);
-			buffer = remove_extracted_line(buffer, len_line);
+			line = ext_line(buffer, nb_read);
+			buffer = remove_ext_line(buffer, len_line);
 			return (line);
 		}
 		else
@@ -107,7 +105,7 @@ char	*get_next_line(int fd)
 	return (NULL);
 }
 
-/*/int	main (void)
+/*int	main (void)
 {
 	int		fd;
 	char	buf[256];
@@ -115,7 +113,9 @@ char	*get_next_line(int fd)
 
 	fd = open("text.txt", O_RDONLY);
 
-		printf("buf %s",get_next_line(fd));
+		ft_printf("buf %s",get_next_line(fd));
+		ft_printf("buf %s",get_next_line(fd));
+		ft_printf("buf %s",get_next_line(fd));
 	
 	return (0);
 }*/
