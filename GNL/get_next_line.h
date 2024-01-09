@@ -10,18 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GNL
-# define GNL
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-#ifndef BUF_SIZE
-# define BUF_SIZE 10
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
 #endif
 
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-/*lib functions lembrar de tirar ntes de enviar*/
-int ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...);
+int		ft_strlen(char *str);
+char	*get_next_line(int fd);
+char	*extract_line_with_break(char *str);
+char	*extract_line_with_no_break(char *str);
+char	*remove_extracted_line(char *buffer, int len);
+char	*resize_buffer(char *buffer);
 
 #endif
