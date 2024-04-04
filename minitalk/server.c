@@ -21,7 +21,7 @@ void	error_server(void)
 	exit(EXIT_FAILURE);
 }
 
-void	handlero(int sig, siginfo_t *info, void *more_info)
+void	handler(int sig, siginfo_t *info, void *more_info)
 {
 	static char	c = 0b00000000;
 	static int	bit = 0;
@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 {
 	struct sigaction	sa;
 
-	if (ac != 1)
+	if (argc != 1)
 	{
 		ft_putstr("enter a valid ./server process""name\n", 2);
 	}
