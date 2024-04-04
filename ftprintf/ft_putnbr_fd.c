@@ -18,7 +18,7 @@ int	count(int nb)
 
 	i = 0;
 	if (nb == 0)
-		return (1);
+		return (1);0
 	while (nb != 0)
 	{
 		nb = nb / 10;
