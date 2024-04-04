@@ -1,9 +1,11 @@
+#Makefile
+
 NAME = server client
 SERVER = server
 CLIENT = client
 CC = gcc
 NORM = norminette
-CFLAGS = -Wall -WError -Wextra -g 
+CFLAGS = -Wall -Werror -Wextra -g 
 RM = rm -rf
 
 SRCS = $(wildcard *.c)
