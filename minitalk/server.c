@@ -51,15 +51,15 @@ int	main(int argc, char **argv)
 	if (argc != 1)
 	{
 		ft_putstr("enter a valid ./server process""name\n", 2);
+        exit(EXIT_FAILURE);
 	}
-	exit(EXIT_FAILURE);
 	argv = NULL;
-	ft_putstr("PID -> ", STDOUT);
+	ft_putstr("PID -> ", STDOUT_FILENO);
 	ft_putnbr(getpid());
 	write(STDOUT_FILENO, "\n", 1);
-	sigemptyset(&sa.samask);
+	sigemptyset(&sa.sa_mask);
 	sigaddset(&sa.sa_mask, SIGUSR1);
-	sigaddset(&sa.samask, SIGUSR2);
+	sigaddset(&sa.sa_mask, SIGUSR2);
 	sa.sa_flags = SA_SIGINFO;
 	sa.sa_sigaction = handler;
 	if (sigaction(SIGUSR1, &sa, NULL) == -1)
