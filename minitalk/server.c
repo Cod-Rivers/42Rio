@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		ft_putstr("enter a valid ./server process""name\n", 2);
         exit(EXIT_FAILURE);
 	}
-	argv = NULL;
+	argv[][]= NULL;
 	ft_putstr("PID -> ", STDOUT_FILENO);
 	ft_putnbr(getpid());
 	write(STDOUT_FILENO, "\n", 1);
